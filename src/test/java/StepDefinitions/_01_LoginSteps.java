@@ -13,8 +13,6 @@ import java.time.Duration;
 
 public class _01_LoginSteps {
     DialogContent dc=new DialogContent();
-
-
     @Given("Navigate to basqar")
     public void navigateToBasqar() {
         GWD.getDriver().get("https://demo.mersys.io/");
@@ -28,9 +26,11 @@ public class _01_LoginSteps {
 //        dc.password.sendKeys("Richfield2020!");
 //        dc.loginButton.click();
         // 1 .aşama
+        dc.findAndClick("acceptCookies");
         dc.findAndSend("username","richfield.edu");
         dc.findAndSend("password","Richfield2020!");
         dc.findAndClick("loginButton");
+
     }
 
     @Then("User should login successfuly")
